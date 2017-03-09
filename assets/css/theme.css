@@ -49,3 +49,19 @@ body {
 .author a {
     color: #ee4444;
 }
+
+.about{
+    height: 128px;
+    width: 128px;
+    border-radius:50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.img-head img{
+  height: 128px;
+  width: 128px;
+  border-radius:50%;
+  margin: 0 auto;
+  display: block;
+}
