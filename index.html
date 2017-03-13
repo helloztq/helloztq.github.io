@@ -1,5 +1,6 @@
 ---
 layout: default
+title: HOME
 ---
 
 {% for post in paginator.posts %}
@@ -14,7 +15,8 @@ layout: default
             {% endif %}
         {% endif %}
         <div class="content">
-            {{ post.content }}
+            {{ post.excerpt }}
+            <a href="{{ post.url | prepend: site.baseurl }}"> »  </a>
         </div>
     </div>
 </div>

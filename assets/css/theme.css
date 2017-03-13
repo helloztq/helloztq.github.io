@@ -65,3 +65,9 @@ body {
   margin: 0 auto;
   display: block;
 }
+
+.username #author {
+     text-align:center;
+     color:#a085c6;
+     font-size: 1.3em;
+}
