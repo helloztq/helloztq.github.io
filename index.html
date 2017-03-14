@@ -16,12 +16,15 @@ title: HOME
         {% endif %}
         <div class="content">
             {{ post.excerpt }}
-            <a href="{{ post.url | prepend: site.baseurl }}"> 查看更多>>  </a>
+            <div class="text-right">
+                <a href="{{ post.url | prepend: site.baseurl }}">更多……</a>
+            </div>
         </div>
     </div>
 </div>
 {% endfor %}
-
+<!--<span class="glyphicon glyphicon-option-horizontal"></span>-->
+<!--<p><i class="icon-camera-retro icon-large"></i> icon-camera-retro</p>-->
 <div class="pagination">
   {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
