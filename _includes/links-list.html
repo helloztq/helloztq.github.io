@@ -1,7 +1,15 @@
-<h1>Links</h1>
-<ul>
+<h1>分类</h1>
+<!-- <ul>
   <li><a href="#">One</a></li>
   <li><a href="#">Two</a></li>
   <li><a href="#">Three</a></li>
   <li><a href="#">Four</a></li>
+</ul> -->
+
+<ul>
+    {% for category in site.categories %}
+    <li>
+    	<a href="/categories/{{ category | first }}/" title="view all posts">{{ category | first }} {{ category | last |size }}</a>
+    </li>
+    {% endfor %}
 </ul>
