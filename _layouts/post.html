@@ -1,7 +1,6 @@
 {% include header.html %}
 
 <!-- <div class="container center-block"> -->
-<div class="post">
 <div class="container center-block">
 
     <div class="row">
@@ -11,8 +10,7 @@
 <!--         <div class="col-md-3 hidden-xs">
             {% include content-index.html %}
         </div> -->
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-10 col-md-offset-1">
           <div class="article">
             <div class="well">
                 <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.date | date: "%Y-%m-%d" }} - {{ page.title }}</a></h1>
@@ -48,9 +46,7 @@
               {% endif %}
           </div>
         </div>
-        <div class="col-md-1"></div>
     </div>
-</div>
 </div>
 {% include disqus-comments.html %}
 {% include footer.html %}
