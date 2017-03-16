@@ -4,24 +4,20 @@
 <div class="container center-block">
 
     <div class="row">
-<!--         <div class="col-md-3 hidden-xs">
-            {\% include sidebar.html\%}
-        </div> -->
-<!--         <div class="col-md-3 hidden-xs">
-            {% include content-index.html %}
-        </div> -->
         <div class="col-md-10 col-md-offset-1">
           <div class="article">
             <div class="well">
-                <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.date | date: "%Y-%m-%d" }} - {{ page.title }}</a></h1>
-                <hr />
+                <div class="page-header">
+                    <h3><p class="text-center">{{ page.title }}&nbsp&nbsp&nbsp<small>{{ page.date | date: "%Y-%m-%d" }}</small></p></h3>
+                </div>
+                <!--<hr />-->
                 {% if site.comments and page.comments %}
                 {% if site.disqus != '' %}
                 <p class="author"><a href="#disqus_thread" data-disqus-identifier="{{ page.url | slugify }}">Comments</a></p>
                 {% elsif site.isso != '' %}
                 <p class="author"><a href="{{ site.baseurl }}{{ page.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
                 {% endif %}
-            {% endif %}
+                {% endif %}
             <div class="post-content">
             {{ content }}
             </div>
@@ -37,14 +33,16 @@
             {% endif %}
             </div>
           </div>
-          <div class="pagination">
-              {% if page.next %}
-                <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">Newer Post</a>
-              {% endif %}
-              {% if page.previous %}
-                <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">Older Post</a>
-              {% endif %}
-          </div>
+              <nav aria-label="...">
+                <ul class="pager">
+                    {% if page.next %}
+                    <li class="previous"><a href="{{ site.baseurl}}{{ page.next.url }}"><span aria-hidden="true">&larr;</span> Older Post</a></li>
+                    {% endif %}
+                    {% if page.previous %}
+                    <li class="next"><a href="{{ site.baseurl}}{{ page.previous.url }}">Newer Post<span aria-hidden="true">&rarr;</span></a></li>
+                    {% endif %}
+                </ul>
+            </nav>
         </div>
     </div>
 </div>

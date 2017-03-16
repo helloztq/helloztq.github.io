@@ -46,7 +46,8 @@ permalink: /:title
 # Build settings
 markdown: kramdown
 
-# theme: minima
+theme: minima
+# theme: jekyll-whiteglass
 paginate: 3
 
 gems:
@@ -61,7 +62,7 @@ gems:
 
 
 
-highlighter: pygments
+highlighter: rouge
 # markdown: kramdown
 # gems: ['jekyll-paginate']
 

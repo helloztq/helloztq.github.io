@@ -6,7 +6,7 @@ title: HOME
 {% for post in paginator.posts %}
 <div class="article">
     <div class="well">
-        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
+        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></h1>
         {% if site.comments and post.comments %}
             {% if site.disqus != '' %}
             <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread" data-disqus-identifier="{{ post.url | slugify }}">Comments</a></p>
@@ -16,9 +16,11 @@ title: HOME
         {% endif %}
         <div class="content">
             {{ post.excerpt }}
+            
             <div class="text-right">
-                <a href="{{ post.url | prepend: site.baseurl }}">更多……</a>
+                <a href="{{ post.url | prepend: site.baseurl }}"> 更多……</a>
             </div>
+            <div class="text-left">{{ post.date | date: "%b %-d, %Y" }}</div>
         </div>
     </div>
 </div>
