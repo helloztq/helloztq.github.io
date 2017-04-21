@@ -1,0 +1,28 @@
+{
+    "path": "../Resources/",
+    "url": "http://koe.oxgame.cn/",
+    "outdir": "./",
+    "ignore": {
+        "config.plist": true
+    },
+    "extname": {
+        ".png": true,
+        ".jpg": true,
+        ".plist": true,
+        ".mp3": true,
+        ".ttf": true,
+        ".ccz": true,
+        ".exportjson": true,
+        ".csb": true,
+        ".json": true,
+        ".csv": true,
+        ".lua": true,
+        ".property": true,
+        ".bin": true,
+        ".fnt": true
+    },
+
+    "bkpath": "../Resources_bk/script",
+    "luapath": "../encrypt_out/script",
+    "rarpath": "../encrypt_out"
+}
