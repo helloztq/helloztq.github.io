@@ -3,41 +3,80 @@ layout: default
 title: HOME
 ---
 
-{% for post in paginator.posts %}
-<div class="article">
-    <div class="well">
-        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></h1>
-        {% if site.comments and post.comments %}
-            {% if site.disqus != '' %}
-            <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread" data-disqus-identifier="{{ post.url | slugify }}">Comments</a></p>
-            {% elsif site.isso != '' %}
-            <p class="author"><a href="{{ site.baseurl }}{{ post.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
-            {% endif %}
-        {% endif %}
+<div class="col-md-11 col-md-offset-1" >
+  <ol class="repo-list">
+    {% for post in paginator.posts %}
 
-        <div class="content">
-            {{ post.excerpt }}
-            <div class="text-right">
-                <a href="{{ post.url | prepend: site.baseurl }}"> 更多……</a>
-            </div>
-            <div class="text-left">{{ post.date | date: "%b %-d, %Y" }}</div>
-        </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p class="repo-list-description">
+            {{ post.excerpt | strip_html | strip }}
+        </p>
+
+        <p class="repo-list-meta">
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span>... more
+            </span>
+        </p>
+
+        <p class="repo-list-meta">
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+            </span>
+            {% for cat in post.categories %}
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+              <a href="{{ site.url }}{{ post.url }}" title="阅读">阅读</a>
+            </span>
+            {% endfor %}
+        </p>
+      </div>
     </div>
-</div>
-{% endfor %}
-<!--<span class="glyphicon glyphicon-option-horizontal"></span>-->
-<!--<p><i class="icon-camera-retro icon-large"></i> icon-camera-retro</p>-->
 
-<div class="pagination">
+
+<!--       <li class="repo-list-item panel panel-info">
+        <h3 class="repo-list-name">
+          <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+
+        <p class="repo-list-description">
+            {{ post.excerpt | strip_html | strip }}
+        </p>
+
+        <p class="repo-list-meta">
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+            </span>
+            {% for cat in post.categories %}
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+            </span>
+            {% endfor %}
+        </p>
+                    
+        </li> -->
+    {% endfor %}
+  </ol>
+</div>
+
+
+<div class="col-md-11 col-md-offset-1">
   {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}
-        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">Newer</a>
+        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">上一页</a>
       {% else %}
-        <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">Newer</a>
+        <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">上一页</a>
       {% endif %}
   {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <span class="page_number ">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">Older</a>
+    <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">下一页</a>
   {% endif %}
 </div>

@@ -72,6 +72,12 @@ body {
      font-size: 1.3em;
 }
 
+.email {
+    text-align:left;
+    color:#222222;
+    font-size: 1.0em;
+}
+
 table {
     width: 70%; /*表格宽度*/
     max-width: 65em; /*表格最大宽度，避免表格过宽*/

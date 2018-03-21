@@ -48,7 +48,7 @@ markdown: kramdown
 
 theme: minima
 # theme: jekyll-whiteglass
-paginate: 3
+paginate: 8
 
 gems:
   - jekyll-feed
